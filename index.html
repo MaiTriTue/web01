@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- ngon ngu tieng viet -->
+        <meta charset="utf-8"/>
+        <!-- key tim kiem -->
+        <meta name="keywords" content="oto, cam ri"  />
+        <meta  name="description" content="web kinh doanh oto" />
+        <!-- reset lai trang sau 1800s khong co tac dong -->
+        <meta http-equiv="REFRESS" content="1800" />
+        <!-- link css -->
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <link href="css/style6.css" rel="stylesheet" />
+        
+        <script>
+            // them tab va tab-content
+            $(document).ready(function() {
+                $("#btnAddId").click(function() {
+                var tabname = $("#addTabName").val()
+                var tabcontent = $("#addTabContent").val()
+                
+                var count = $("ul.tab > li").length;
+                
+                $("ul.tab").append(
+                    `<li><a href="#tab${count + 1}">${tabname}</a></li>`
+                )
+                $("div.tab-content").append(
+                    `<h1 id="tab${count+1}" style="display:none">${tabcontent}</h1>`
+                )
+            })
+            })
+            
+            // them nut gototop
+            $(document).ready(function() {
+                $("#gototop > a").hide()
+
+                $(window).scroll(function() {
+                    if($(this).scrollTop() >=100){
+                        $("#gototop > a").fadeIn(2000)
+                    }
+                    else {
+                        $("#gototop > a").fadeOut(2000)
+                    }
+                })
+
+                $("#gototop > a").click(function() {
+                    $("html, body").animate({
+                        scrollTop: 0
+                    }, 1000)
+                })
+            })
+
+            // xu ly tab 
+            $(document).ready(function() {
+                $(".tab-content > h1:not(:first-child)").hide()
+
+
+
+                $("ul.tab").on("click", "li > a", function() {
+                    // xu ly tab 
+                    event.preventDefault()
+                    $("ul.tab > li > a").removeClass("active")
+                    $(this).addClass("active")
+
+                    // xu ly tab-content
+                    $(".tab-content > h1").hide()
+                    var tab = $(this).attr("href")
+                    $(tab).show()
+
+                })
+            })
+
+            
+        </script>
+
+        <title>ShowRoom Nhat Nguyen</title>
+
+    </head>
+    <body class="container">
+        <header>
+            <div class="logo">
+                <img src="image/logohonda01.png" alt="logo honda" />
+
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">Trang chủ</a>
+                    </li>
+                    <li>
+                        <a href="#">Giới Thiệu</a>
+                    </li>
+                    <li>
+                        <a href="#">Sản Phẩm</a>
+                    </li>
+                    <li>
+                        <a href="#">Tin Tức</a>
+                    </li>
+                    <li>
+                        <a href="#">Liên Hệ</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <div id="gototop">
+                <a  href="javascript:;">GO TO TOP</a>
+            </div>
+        </section>
+        <section class="banner">
+            <img src="image/bannerhonda01.png"  />
+        </section>
+
+        <section class="slogan">
+            <h1>TỎA SÁNG CÔNG NGHỆ VƯỢT TRỘI</h1>
+        </section>
+
+        <section>
+            <br/>
+            <input type="text" id="addTabName" placeholder="nhap tab name" />
+            <input type="text" id="addTabContent" placeholder="nhap tab-content" />
+            <input type="button" id="btnAddId" value="Add Tab"/>
+            
+        </section>
+        <br/>
+
+        <section class="tabs">
+            <ul class="tab">
+                <li><a href="#tab1" class="active">Java</a></li>
+                <li><a href="#tab2">Python</a></li>
+                <li><a href="#tab3">C++</a></li>
+                <li><a href="#tab4">C#</a></li>
+            </ul>
+            <div class="tab-content">
+                <h1 id="tab1">Java là một ngôn ngữ lập trình hướng đối tượng và dựa trên các lớp. Khác với phần lớn ngôn ngữ lập trình thông thường, thay vì biên dịch mã nguồn thành mã máy hoặc thông dịch mã nguồn khi chạy, Java được thiết kế để biên dịch mã nguồn thành bytecode, bytecode sau do sẽ được môi trường thực thi chạy.</h1>
+                <h1 id="tab2">Python là một ngôn ngữ lập trình hướng đối tượng và dựa trên các lớp. Khác với phần lớn ngôn ngữ lập trình thông thường, thay vì biên dịch mã nguồn thành mã máy hoặc thông dịch mã nguồn khi chạy, Java được thiết kế để biên dịch mã nguồn thành bytecode, bytecode sau đó sẽ được môi trường thực thi chạy.</h1>
+                <h1 id="tab3">C++ là một ngôn ngữ lập trình hướng đối tượng và dựa trên các lớp. Khác với phần lớn ngôn ngữ lập trình thông thường, thay vì biên dịch mã nguồn thành mã máy hoặc thông dịch mã nguồn khi chạy, Java được thiết kế để biên dịch mã nguồn thành bytecode, bytecode sau đó sẽ được môi trường thực thi chạy.</h1>
+                <h1 id="tab4">C# là một ngôn ngữ lập trình hướng đối tượng và dựa trên các lớp. Khác với phần lớn ngôn ngữ lập trình thông thường, thay vì biên dịch mã nguồn thành mã máy hoặc thông dịch mã nguồn khi chạy, Java được thiết kế để biên dịch mã nguồn thành bytecode, bytecode sau đó sẽ được môi trường thực thi chạy.</h1>
+            </div>
+            
+            
+        </section>
+
+        <section class="introduction">
+            <div class="intro01">
+                <h1 class="underline">GIỚI THIỆU HONDA ÔTÔ</h1>
+                <p>Được thử nghiệm bởi Trung tâm Thử nghiệm khí thải phương tiện cơ giới đường bộ (NETC), Cục Đăng kiểm Việt Nam theo tiêu chuẩn Phụ lục Q TCVN 6785 : 2015. Được kiểm tra và cấp giấy chứng nhận bởi Phòng Chứng nhận Chất lượng xe cơ giới (VAQ), Cục Đăng kiểm Việt Nam. Mức độ tiêu thụ nhiên liệu thực tế có thể thay đổi do điều kiện sử dụng, kỹ năng lái xe và tình trạng bảo dưỡng kỹ thuật của xe.</p>
+                <p>Hệ thống công nghệ hỗ trợ lái xe an toàn tiên tiến Honda SENSING hỗ trợ và bảo vệ bạn tối đa trong từng khoảnh khắc, để bạn an tâm vững tay lái trên mọi cung đường.</p>
+            </div>
+            
+            <div class="items">
+                <div class="item">
+                    <div>
+                        <img src="image/honda.png" alt="logo"/>
+                        <h4>HonDa City</h4>
+                        <p>Cùng honda toa sang....</p>
+                    </div>
+
+                </div>
+                <div class="item">
+                    <div>
+                        <img src="image/honda.png" alt="logo"/>
+                        <h4>HonDa City</h4>
+                        <p>Cùng honda toa sang....</p>
+                    </div>
+
+                </div>
+                <div class="item">
+                    <div>
+                        <img src="image/honda.png" alt="logo"/>
+                        <h4>HonDa City</h4>
+                        <p>Cùng honda toa sang....</p>
+                    </div>
+
+                </div>
+                <div class="item">
+                    <div>
+                        <img src="image/honda.png" alt="logo"/>
+                        <h4>HonDa City</h4>
+                        <p>Cùng honda toa sang....</p>
+                    </div>
+
+                </div>
+                
+            </div>
+        </section>
+        
+    </body>
+</html>

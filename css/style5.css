@@ -1,0 +1,160 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+section.nav {
+    background-color: cadetblue;
+
+    
+}
+section.nav > ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0%;
+    display: flex;
+}
+section.nav > ul > li {
+    
+    border-right: 1px solid white;
+    min-width: 120px;
+    text-align: center;
+}
+section.nav > ul > li > a {
+    text-decoration: none;
+    display: block;
+    padding: 15px 8px;
+}
+section.nav > ul > li > a:hover {
+    background-color: blue;
+    color: white;
+}
+
+ul.left > li:last-child {
+    border-right: none;
+}
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+
+div.tooltipcontent {
+    display: none;
+    background-color: coral;
+    padding: 5px;
+    border-radius: 10px;
+}
+li.tooltip:hover > div.tooltipcontent  {
+    display: block;
+    z-index: 5;
+    position: absolute;
+    width: 200px;
+    margin-left: -100px;
+}
+
+/* cach lam dau mui ten */
+.tooltipcontent::after {
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent coral transparent;
+    position: absolute;
+    top: -20px;
+    right: 10%;
+}
+
+.clearfix {
+    overflow: hidden;
+}
+section.banner {
+    background: linear-gradient(darkblue, blue);
+    display: flex;
+    margin-top: 5px;
+}
+
+section.banner > h1 {
+    color: white;
+    font-size: 36px;
+    text-shadow: 2px 3px 2px antiquewhite;
+    position: relative;
+    left: 10%;
+}
+section.content {
+    
+    width: 70%;
+    margin: 5px auto;
+}
+div.subject {
+    margin-top: 5px;
+}
+
+
+div.subject > h1 {
+    color: white;
+    background-color: darkblue;
+    margin: 0;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+}
+div.post {
+    display: flex;
+    border-bottom: 1px solid white;
+    background-color: lightblue;
+}
+
+.col1 {
+    width: 10%;
+}
+.col2 {
+    width: 40%;
+}
+.col3 {
+    width: 20%;
+}
+.col4 {
+    width: 30%;
+    direction: rtl;
+}
+.col > img {
+    width: 100%;
+    border-radius: 50%;
+    background-color: black;
+}
+ul,p {
+    margin: 0;
+
+}
+.col {
+    padding: 10px;
+}
+.col > ul {
+    list-style-type: none;
+}
+
+section.ads > div {
+    position: fixed;
+    background: linear-gradient(lightblue, blue);
+    width: 13%;
+    padding: 120px 5px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 10px;
+}
+div.ads-left {
+    left: 0;
+}
+div.ads-right {
+    right: 0;
+}
+section.footer {
+    background-color: blue;
+    padding: 10px;
+    color: white;
+    
+}
+section.footer > ul {
+    list-style-type: none;
+}
